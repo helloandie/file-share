@@ -1,0 +1,35 @@
+<apex:page standardController="SharedFile__c" extensions="filesExtension" standardStylesheets="false" sidebar="false" showHeader="false">
+    <c:Community_Head />
+    <body hoe-navigation-type="vertical" hoe-nav-placement="left" theme-layout="wide-layout" theme-bg="bg1" >
+        <div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
+            <c:Community_Header />
+                <div id="hoeapp-container" hoe-color-type="lpanel-bg2" hoe-lpanel-effect="push" class="hoe-minimized-lpanel">
+                    <section id="main-content" style="text-align: center;">
+                        <div class="content-container center">
+                            <h1 class="center">Files</h1>
+                            <hr class="accent" />
+                        <p>
+                            Maximum file upload size: 2MB
+                        </p>
+                        </div>
+                        <apex:outputText rendered="{!$Profile.Name=='Nextep Community Plus - Admin'}"><a href="/upload"><strong>Upload a File</strong></a></apex:outputText>
+                        <br />
+                        <br />
+                        <apex:repeat value="{!sFiles}" var="sf">
+                            <ul>
+                                <li>
+                                    <a href="/servlet/servlet.FileDownload?file={!sf.Attachment__c}" target="_blank"><apex:outputText value="{!sf.FileName__c}"/></a>
+                                    <br />
+                                    <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!sf.CreatedDate}" /> </apex:outputText>
+                                </li>
+                            </ul>
+                        </apex:repeat>
+                        <br />
+                        
+                        
+                     </section>
+                </div>   
+        </div>
+    <c:Community_Scripts />
+    </body>
+</apex:page>

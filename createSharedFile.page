@@ -1,0 +1,21 @@
+<apex:page standardController="SharedFile__c" extensions="uploadSharedFile">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:messages />
+        <apex:pageBlockSection >       
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="File" for="file"/>
+            <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Share With"/>
+            <apex:inputField required="true" value="{!SharedFile__c.ShareWith__c}" />
+        </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+    <apex:pageBlockButtons location="top">
+        <apex:commandButton action="{!attachFile}" value="Upload"/>
+        <apex:commandButton action="{!back}" value="Back"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

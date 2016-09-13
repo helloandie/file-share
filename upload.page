@@ -1,0 +1,38 @@
+<apex:page standardController="SharedFile__c" extensions="uploadSharedFile" standardStylesheets="false" sidebar="false" showHeader="false">
+    <c:Community_Head />
+    <body hoe-navigation-type="vertical" hoe-nav-placement="left" theme-layout="wide-layout" theme-bg="bg1" >
+        <div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
+            <c:Community_Header />
+                <div id="hoeapp-container" hoe-color-type="lpanel-bg2" hoe-lpanel-effect="push" class="hoe-minimized-lpanel">
+                    <section id="main-content" style="text-align: center;">
+                        <div class="content-container center">
+                            <h1 class="center">Upload a File</h1>
+                            <hr class="accent" />
+                            <p>
+                                Max Upload Size: 2MB
+                        </p>
+                        </div>
+                        
+    <apex:form >
+        <apex:pageMessages />
+        <br />
+        <div class="form-field-row">
+          <div class="form-field-input"><apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" fileSize="{!attachment.BodyLength}" id="file"/> </div>        
+        </div>
+        <div class="form-field-row">
+          <div class="form-field-label">Share With:</div>
+          <div class="form-field-input"><apex:inputField required="true" value="{!SharedFile__c.ShareWith__c}" /></div>
+        </div>
+        <div class="form-field-row">
+          <div class="form-field-button"><apex:commandButton value="Upload" action="{!attachFile}"/></div>
+        </div>
+     </apex:form>
+    
+
+                                       
+                     </section>
+                </div>   
+        </div>
+    <c:Community_Scripts />
+    </body>
+</apex:page>
