@@ -1,3 +1,5 @@
+<!--This is the internal, Salesforce-side custom upload page-->
+
 <apex:page standardController="SharedFile__c" extensions="uploadSharedFile">
     <apex:form >
     <apex:pageBlock >
