@@ -1,3 +1,5 @@
+<!--This is the custom Community upload page for users-->
+
 <apex:page standardController="SharedFile__c" extensions="uploadSharedFile" standardStylesheets="false" sidebar="false" showHeader="false">
     <c:Community_Head />
     <body hoe-navigation-type="vertical" hoe-nav-placement="left" theme-layout="wide-layout" theme-bg="bg1" >
